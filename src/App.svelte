@@ -44,7 +44,7 @@
 </script>
 
 <main
-  class="min-h-screen bg-black text-white/80 flex flex-col items-center justify-center p-4 space-y-4 selection:text-orange-100 selection:bg-orange-700"
+  class="min-h-screen bg-black text-white/80 flex flex-col items-center justify-center p-4 space-y-4 selection:text-orange-100 selection:bg-orange-600"
 >
   <BatCanvas
     {batData}
