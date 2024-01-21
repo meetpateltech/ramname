@@ -4,7 +4,7 @@
 
   import type { BatData } from "../App.svelte";
 
-  import batmanBg from "../assets/batman_logo_bg_1200.jpg";
+  import batmanBg from "../assets/jsr7.jpg";
   import DownloadErrorModal from "./DownloadErrorModal.svelte";
 
   export let batData: BatData;
@@ -46,9 +46,7 @@
 
     resetScale();
 
-    context.font = batData.isBengali
-      ? "800 25px 'Baloo Da 2'"
-      : "25px 'Anton'";
+    context.font = batData.isHindi ? "800 25px 'Baloo Da 2'" : "25px 'Anton'";
 
     const measurement = context.measureText(batData.name);
     const textScale = Math.min(
@@ -63,7 +61,7 @@
       (canvas.width - measurement.width * textScale) / 2 / textScale,
       (canvas.height +
         measurement.actualBoundingBoxAscent * textScale * ELONGATE +
-        (batData.isBengali
+        (batData.isHindi
           ? 0
           : measurement.actualBoundingBoxDescent * textScale * ELONGATE)) /
         2 /
@@ -144,6 +142,6 @@
 
 <style lang="postcss">
   .canvas-button {
-    @apply p-2 text-sm font-semibold text-red-100 bg-red-700 hover:bg-red-600 rounded-lg;
+    @apply p-2 text-sm font-semibold text-orange-100 bg-orange-600 hover:bg-orange-700 rounded-lg;
   }
 </style>

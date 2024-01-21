@@ -8,7 +8,7 @@
 
 <div
   transition:scale={{ start: 1.5 }}
-  class="bg-black fixed inset-0 flex flex-col items-center justify-center text-red-700 p-4"
+  class="bg-black fixed inset-0 flex flex-col items-center justify-center text-orange-700 p-4"
 >
   <div class="w-full sm:w-1/2 md:w-1/3">
     <h1 class="text-3xl mb-10 w-full">Error encountered!</h1>
@@ -18,7 +18,7 @@
       again!
     </p>
     <button
-      class="float-right mt-10 px-8 py-2 bg-red-700 hover:bg-red-600 font-semibold text-red-100 rounded disabled:opacity-0 transition-opacity ease-in-out duration-300"
+      class="float-right mt-10 px-8 py-2 bg-orange-700 hover:bg-orange-600 font-semibold text-orange-100 rounded disabled:opacity-0 transition-opacity ease-in-out duration-300"
       on:click={() => dispatch("close")}
     >
       Okay

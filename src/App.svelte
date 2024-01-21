@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
   export interface BatData {
     name: null | string;
-    isBengali: boolean;
+    isHindi: boolean;
   }
 </script>
 
@@ -15,7 +15,7 @@
 
   let batData: BatData = {
     name: null,
-    isBengali: false,
+    isHindi: false,
   };
 
   let nameDialogOpen: boolean = true;
@@ -24,9 +24,9 @@
     nameRef.focus();
   });
 
-  const isBengali = (name: string) => {
+  const isHindi = (name: string) => {
     for (let c of name) {
-      if (/^[\u0980-\u09ff]+$/.test(c)) {
+      if (/^[\u0900-\u097F]+$/.test(c)) {
         return true;
       }
     }
@@ -36,7 +36,7 @@
   const nameSubmit = (event: { detail: string }) => {
     batData = {
       name: event.detail.toUpperCase(),
-      isBengali: isBengali(event.detail),
+      isHindi: isHindi(event.detail),
     };
     console.log(batData);
     nameDialogOpen = false;
@@ -44,14 +44,14 @@
 </script>
 
 <main
-  class="min-h-screen bg-black text-white/80 flex flex-col items-center justify-center p-4 space-y-4 selection:text-red-100 selection:bg-red-700"
+  class="min-h-screen bg-black text-white/80 flex flex-col items-center justify-center p-4 space-y-4 selection:text-orange-100 selection:bg-orange-700"
 >
   <BatCanvas
     {batData}
     on:edit={() => {
       nameDialogOpen = true;
     }}
-    class="w-full md:max-w-lg lg:max-w-xl rounded-lg ring-2 ring-red-800/50"
+    class="w-full md:max-w-lg lg:max-w-xl rounded-lg ring-2 ring-orange-800/50"
   />
   <Disclaimer />
 
